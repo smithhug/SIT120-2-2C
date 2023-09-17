@@ -1,5 +1,18 @@
 <script setup>
+    import { ref } from 'vue';
     import ArticleItem from './ArticleItem.vue';
+
+    const articletitles = ref([
+        {
+            title: "Why Baldur's Gate III is GOTY"
+        },
+        {
+            title: 'Starfield releases next week'
+        },
+        {
+            title: 'How good is Metal Gear Solid 2: Sons of Liberty'
+        }
+    ])
 </script>
 <template>
     <div>
@@ -8,9 +21,9 @@
         </ul>
     </div>
     <div class="container">
-        <div class="grid"><ArticleItem title="Why Baldur's Gate III is GOTY"/></div>
-        <div class="grid"><ArticleItem title="Starfield releases next week"/></div>
-        <div class="grid"><ArticleItem title="How good is Metal Gear Solid 2: Sons of Liberty"/></div>
+        <template v-for="article in articletitles">
+            <div class="grid"><ArticleItem :title="article.title"/></div>
+        </template>
     </div>
 </template>
 

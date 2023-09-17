@@ -6,17 +6,17 @@
 
 <template>
     <div>
-        <h3>{{ title }}</h3>
-        <img src="@/assets/banner.jpg"/>
+        <h3 v-bind:class="{'heading' : true}">{{ title }}</h3>
+        <img v-bind:class="{'thumbnail' : true}" src="@/assets/banner.jpg"/>
     </div>
 </template>
 
 <style scoped>
-    img {
+    .thumbnail {
         width: 300px;
         height: 300px;
     }
-    h3 {
+    .heading {
         color: black;
     }
 </style>
